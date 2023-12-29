@@ -1,0 +1,35 @@
+
+body {
+  margin: 0;
+}
+
+
+.image-with-video-container {
+  position: relative;
+  display: inline-block; /* または必要に応じて別の方法で配置 */
+}
+
+.image-with-video-container img {
+  width: 100%; /* または必要に応じて調整 */
+  height: auto;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10%;
+  height: 10%;
+ 
+  justify-content: center;
+  align-items: center;
+}
+
+.image-with-video-container:hover .video-overlay {
+  display: flex; /* ホバー時に表示 */
+}
+
+.video-overlay iframe {
+  width: 100%; /* 動画のサイズ */
+  height: 100%;
+}

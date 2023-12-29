@@ -1,0 +1,263 @@
+/* ------------video---------------- */
+.video-background {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* ビューポートの高さに合わせる */
+  overflow: hidden;
+}
+
+.video-background video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  height: auto;
+  z-index: 1; /* 背景層 */
+}
+
+.video-background .overlay-image {
+  position: absolute;
+  bottom: 0; /* 左下に配置 */
+  left: 0;
+  width: 400px; /* 画像のサイズを調整 */
+  height: auto; /* アスペクト比を保持 */
+  object-fit: cover; /* 画像がコンテナに収まるように調整 */
+  z-index: 2; /* 前景層 */
+  animation: fadeInUp 2s ease forwards; /* アニメーションの適用 */
+}
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* -------------------------------------- */
+
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+
+}
+
+.main-image-container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.main-image-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+.overlay-image-container {
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+.east-image-container {
+  position: absolute;
+  top: 210px;
+  left: 870px;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.north-image-container {
+  position: absolute;
+  top: -80px;
+  left: 330px;
+  width: 210%;
+}
+
+.south-image-container {
+  position: absolute;
+  top: 260px;
+  left: 330px;
+  width: 170%;
+  height: 100px;
+
+}
+
+.hover-image-container {
+  position: absolute;
+  width: 25%;
+  margin-top: 100px;
+}
+
+.hover-image-container img,
+.hover-image img {
+  width: 100%;
+  height: auto;
+}
+
+.original-image {
+  transition: opacity 0.3s ease;
+}
+
+.hover-image {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hover-image:hover {
+  transform: scale(1.2);
+}
+
+.small-images-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 15%;
+}
+
+.image-link {
+  margin-bottom: 10px;
+}
+
+.small-image {
+  transition: transform 0.3s ease;
+}
+
+.changed-color {
+  filter: sepia(100%);
+  /* または好みの色変更効果 */
+}
+
+
+#small-image1 {
+  position: absolute;
+  top: 10px;
+  /* 上からの位置 */
+  left: 20px;
+  /* 左からの位置 */
+}
+
+#small-image2 {
+  position: absolute;
+  top: 50px;
+  left: 150px;
+}
+
+#small-image3 {
+  position: absolute;
+  top: 220px;
+  /* 上からの位置 */
+  left: 150px;
+  /* 左からの位置 */
+}
+
+#small-image4 {
+  position: absolute;
+  top: 0px;
+  left: 200px;
+}
+
+#small-image5 {
+  position: absolute;
+  top: 200px;
+  /* 上からの位置 */
+  left: 220px;
+  /* 左からの位置 */
+}
+
+#small-image6 {
+  position: absolute;
+  top: 30px;
+  left: 80px;
+}
+
+
+
+#small-image7 {
+  position: absolute;
+  top: 180px;
+  /* 上からの位置 */
+  left: 80px;
+  /* 左からの位置 */
+}
+
+#small-image8 {
+  position: absolute;
+  top: 150px;
+  left: 140px;
+}
+
+#small-image9 {
+  position: absolute;
+  top: -20px;
+  /* 上からの位置 */
+  left: 120px;
+  /* 左からの位置 */
+}
+
+#small-image10 {
+  position: absolute;
+  top: 250px;
+  left: 70px;
+}
+
+.small-image:hover {
+  transform: scale(1.4);
+}
+
+.hover-image-container:hover .original-image {
+  opacity: 0;
+}
+
+.hover-image-container:hover .hover-image {
+  opacity: 1;
+}
+
+#east {
+  top: 20px;
+  left: 300px
+}
+
+#south {
+  top: 300px;
+  left: 300px;
+}
+
+@media (max-width: 768px) {
+  .overlay-image {
+    top: 5px;
+    /* 小さい画面での位置 */
+    left: 5px;
+    /* 小さい画面での位置 */
+  }
+}
+
+@media (max-width: 480px) {
+  .overlay-image {
+    top: 3px;
+    /* より小さい画面での位置 */
+    left: 3px;
+    /* より小さい画面での位置 */
+  }
+}
